@@ -1,0 +1,39 @@
+{
+  "collection": "@nestjs/schematics",
+  "sourceRoot": "apps/jest-import-bug/src",
+  "monorepo": true,
+  "root": "apps/jest-import-bug",
+  "compilerOptions": {
+    "webpack": true,
+    "tsConfigPath": "apps/jest-import-bug/tsconfig.app.json"
+  },
+  "projects": {
+    "jest-import-bug": {
+      "type": "application",
+      "root": "apps/jest-import-bug",
+      "entryFile": "main",
+      "sourceRoot": "apps/jest-import-bug/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/jest-import-bug/tsconfig.app.json"
+      }
+    },
+    "another-app": {
+      "type": "application",
+      "root": "apps/another-app",
+      "entryFile": "main",
+      "sourceRoot": "apps/another-app/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/another-app/tsconfig.app.json"
+      }
+    },
+    "some-lib": {
+      "type": "library",
+      "root": "libs/some-lib",
+      "entryFile": "index",
+      "sourceRoot": "libs/some-lib/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/some-lib/tsconfig.lib.json"
+      }
+    }
+  }
+}
